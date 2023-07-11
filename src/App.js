@@ -3,9 +3,17 @@ import { useReducer } from 'react';
 //순서1 - 전역데이터를 변경해주는 규칙을 가지고 있는 변형자함수 생성
 
 const reducer = (state, action) => {
-	if (action.type === 'minus') return state - action.payload;
-	if (action.type === 'plus') return state + action.payload;
-	else return state;
+	// if (action.type === 'minus') return state - action.payload;
+	// if (action.type === 'plus') return state + action.payload;
+	// else return state;
+	switch (action.type) {
+		case 'minus':
+			return state - action.payload;
+		case 'plus':
+			return state + action.payload;
+		default:
+			return state;
+	}
 };
 
 function App() {
